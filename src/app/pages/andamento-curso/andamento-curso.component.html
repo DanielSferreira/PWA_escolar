@@ -1,0 +1,53 @@
+<app-menu titulo="Acompanhamento do Curso"></app-menu>
+
+
+<section>
+  <div class="painel">
+    <div class="grafico aluno">
+      <div class="level-item">
+        <canvas baseChart [data]="GraficoDeRodaValores" [labels]="GraficoDeRodaTextos" [chartType]="GraficoTipo"
+          [colors]="cores">
+        </canvas>
+      </div>
+    </div>
+    <div class="dados aluno">
+      <nav class="panel">
+        <p class="panel-heading">
+          Daniel S Ferreira
+        </p>
+        <po-table
+          [p-items]="[
+          { 'Dados do Curso' : 'Começo: 27/11/2019' },
+          {'Dados do Curso' : 'Final Previsto: 27/11/2020'},
+          {'Dados do Curso' : 'Presenças: 5'},
+          {'Dados do Curso' : 'Ausências: 1'},
+          {'Dados do Curso' : 'Faltam 74 aulas'}]">
+          </po-table>
+        <!-- <div class="panel-block">
+        </div>
+        <a class="panel-block is-active">
+          Começo: 27/11/2019
+        </a>
+        <a class="panel-block">
+          Final Previsto: 27/11/2020
+        </a>
+        <a class="panel-block">
+          Presenças: 5
+        </a>
+        <a class="panel-block">
+          Ausências: 1
+        </a>
+        <a class="panel-block">
+          Faltam 74 aulas
+        </a> -->
+      </nav>
+    </div>
+  </div>
+</section>
+<!-- (p-change)="EventEmitter" -->
+<po-calendar
+    p-locale="string"
+    p-max-date="any"
+    p-min-date="any" >
+</po-calendar>
+

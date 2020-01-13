@@ -1,0 +1,13 @@
+<app-menu titulo="Desenvolvimento do Aluno"></app-menu>
+<div class="colunas ">
+  <div class="coluna"style="">
+    <po-calendar></po-calendar>
+  </div>
+  <div class="coluna">
+    <H1 class="title aqui" style="text-align: center;">Eventos de {{mes}}</H1>
+    <div class="list" >
+        <span *ngFor="let evento of eventos" class="list-item">
+      <b>{{ evento.Data }}</b> - {{ evento.Descricao }}
+    </span>
+  </div>
+</div>  

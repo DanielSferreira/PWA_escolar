@@ -1,0 +1,25 @@
+.colunas
+  margin: 0 !important
+  padding: 0 !important
+  display: flex
+  flex-direction: column
+  align-items: center
+  justify-items: center
+
+.coluna
+  margin-top: 3vh
+
+.coluna:last-child
+  align-self: center
+@media screen and ( min-width: 500px )
+
+  .coluna:last-child
+    align-self: flex-start
+  .colunas
+    margin: 0 !important
+    flex-direction: row
+    flex-wrap: wrap
+    width: 100vw
+  .coluna
+    // margin-right: -3vw
+    margin-left: 3vw
