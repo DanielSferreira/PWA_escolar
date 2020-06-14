@@ -1,0 +1,29 @@
+<section class="hero is-info">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title">
+        Apostilas
+        <div style="float: right;">
+          <app-botao-modal-menu></app-botao-modal-menu>
+        </div>
+      </h1>
+      <h2 class="subtitle">
+        Baixe e estude com suas Apostilas
+      </h2>
+    </div>
+  </div>
+</section>
+
+<div class="columns is-multiline" style="justify-content: center;">
+  <div *ngFor="let ab of conteudo | async">
+    <mat-card>
+      <mat-card-content>
+        <p class="title is-4">{{ ab.Modulo }}</p>
+        <p class="subtitle is-5"> <b>{{ab.CargaHoraria}}hrs</b> de Carga Horaria</p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-raised-button color="primary"> Baixar Apostila </button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>

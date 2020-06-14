@@ -1,0 +1,14 @@
+<app-menu titulo="Presenças e faltas"></app-menu>
+<table class=" table is-fullwidth ">
+  <th>Dia</th>
+  <th>Horário</th>
+  <th>Presença/Falta</th>
+
+  <tr *ngFor="let freq of listaFaltas | async">
+    
+    <td>{{freq.data}}</td>
+    <td>{{freq.horario}}</td>
+    <td>{{freq.presenca}}</td>
+  </tr>
+  
+</table>

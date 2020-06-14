@@ -1,0 +1,11 @@
+<form action="" [formGroup]="Forms">
+  <input type="text" formControlName='usuario' #caixaNome/>
+  <input type="text" formControlName="senha" />
+  <input type="button" value="Enviar"  (click)="carrega(caixaNome)" />
+</form>
+
+{{
+  Forms.controls['usuario'].value
+}}
+
+<h3 *ngIf="caixaNome.value===usuario">Nome Valido</h3>

@@ -1,0 +1,21 @@
+<div class="modal" [ngClass]="{'is-active':alternaModal}">
+  <div class="modal-background" ></div>
+  <div class="modal-card">
+    <header class="modal-card-head">
+      <p class="modal-card-title">Menu</p>
+      <button class="delete" aria-label="close"(click)="alternarModal()"></button>
+    </header>
+    <section class="modal-card-body">
+      <ul class="list" (click)="alternarModal()">
+        <li class="list-item"><a routerLink="/apostilas">Apostilas</a></li>
+        <li class="list-item"><a routerLink="/faltas">Presenças e Faltas</a></li>
+        <li class="list-item"><a routerLink="/acompanhamento">Andamento do curso</a></li>
+        <li class="list-item"><a routerLink="/calendario">Calendario Pedagogico</a></li>
+        <li class="list-item">Avisos</li>
+        <li class="list-item">Solicitações e Requerimentos</li>
+        <li class="list-item"><a routerLink="/financeiro">Financeiro</a></li>
+        <li class="list-item" (click)="fechar()">Sair</li>
+      </ul>
+    </section>
+  </div>
+</div>

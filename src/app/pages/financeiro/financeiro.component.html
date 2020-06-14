@@ -1,0 +1,14 @@
+<app-menu titulo="Financeiro"></app-menu>
+<section>
+    <h3 class="title center">Parcelitas</h3>
+    <table class=" table is-fullwidth ">
+        <th>Vencimento</th>
+        <th>Valor</th>
+      
+        <tr *ngFor="let algo of parcelas | async">
+          <td>{{algo.vencimento}}</td>
+          <td>{{algo.valor}}</td>
+        </tr>
+        
+      </table>
+</section>

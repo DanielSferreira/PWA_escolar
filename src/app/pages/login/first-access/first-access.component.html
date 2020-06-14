@@ -1,0 +1,43 @@
+<div id="caixa">
+    <div class="flex1">
+        
+        <form [formGroup]="form" (ngSubmit)="postAluno()">
+            <mat-form-field class="example-full-width">
+                <input matInput placeholder="Aluno" formControlName="name">
+            </mat-form-field>
+    
+            <mat-form-field class="example-full-width">
+                <input matInput placeholder="Matricula / Login" formControlName="email">
+            </mat-form-field>
+    
+            <mat-form-field>
+                <mat-label>Unidade</mat-label>
+                <mat-select formControlName="unidade">
+                    <mat-option *ngFor="let uni of unidade" [value]="uni.id">
+                        {{uni.nome}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>Unidade</mat-label>
+                <mat-select formControlName="curso">
+                    <mat-option *ngFor="let curso of cursos" [value]="curso.id">
+                        {{curso.nome}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width">
+                <input matInput type='password' placeholder="Senha do sistema" formControlName="password">
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+                <input matInput type='password' placeholder="Repita a senha" formControlName="c_password">
+            </mat-form-field>
+            <div id="pandora">
+                <button mat-button color="accent" routerLink="/login"> Voltar </button> -
+                <button type="submit"mat-button color="accent"> Redefinir </button>
+            </div>
+        </form>
+    </div>
+</div>

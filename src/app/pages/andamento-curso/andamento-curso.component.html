@@ -1,0 +1,47 @@
+<app-menu titulo="Acompanhamento do Curso"></app-menu>
+
+
+<section>
+  <div class="painel">
+    <div class="grafico aluno">
+      <div class="level-item">
+        <canvas baseChart [data]="GraficoDeRodaValores" [labels]="GraficoDeRodaTextos" [chartType]="GraficoTipo"
+          [colors]="cores">
+        </canvas>
+      </div>
+    </div>
+    <div class="dados aluno">
+      <nav class="panel">
+        <p class="panel-heading">
+          Daniel S Ferreira
+        </p>
+        <po-table
+          [p-items]="[
+          { 'Dados do Curso' : 'Começo: '+ begin },
+          {'Dados do Curso' : 'Presenças: '+totalDeAulas+''},
+          {'Dados do Curso' : 'Ausências: '+faltas+''}]">
+        </po-table>
+      </nav>
+    </div>
+  </div>
+</section>
+<section>
+  <div *ngIf="aulas | async; else loading">
+
+    {{ atualizaGrafico() }}
+    <table class=" table is-fullwidth ">
+      <th>data</th>
+      <th>Curso</th>
+      <th>aula feita</th>
+    
+      <tr *ngFor=" let aula of aulas | async ">
+        <td>{{ aula.data}}</td>
+        <td>{{ aula.CURSO}}</td>
+        <td>{{aula.AULA }}</td>
+    </tr>
+    </table>
+    
+  </div>
+  <ng-template #loading>Carregando, apenas espere 5 segundos...</ng-template>
+
+</section>

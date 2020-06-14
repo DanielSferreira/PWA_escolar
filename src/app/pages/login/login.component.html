@@ -1,0 +1,29 @@
+<div id="caixa">
+    <div class="flex1">
+      <form [formGroup]="login" (ngSubmit)="makeLogin()">
+        
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Usuário" formControlName='user'>
+      </mat-form-field>
+  
+      <mat-form-field class="example-full-width">
+          <input matInput type="password" placeholder="Senha" formControlName='password'>
+      </mat-form-field>
+
+      <mat-form-field>
+          <mat-label>Unidade</mat-label>
+          <mat-select>
+            <mat-option *ngFor="let uni of unidade" [value]="uni.id">
+              {{uni.unidade}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+      <div id="pandora">
+          <button mat-raised-button color="primary" class="entry" routerLink="/"> Entrar </button>
+          <button mat-button color="accent" routerLink="/login/PrimeiroAcesso"> Prmeiro acesso </button> ou 
+          <button mat-button color="accent" routerLink="/acompanhamento"> esqueceu a senha </button>
+      </div>
+      </form>
+    </div>
+</div>
